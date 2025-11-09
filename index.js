@@ -86,10 +86,10 @@ async function transcribeTelegramVoice(fileId, telegramToken, openaiApiKey,model
 // API endpoint для транскрибации
 app.post("/transcribe", async (req, res) => {
   try {
-    const { fileId, telegram_token, openai_api_key, model } = req.body;
+    const { fileId, telegram_token, openai_api_key, model,jb_mail } = req.body;
 
     // Валидация входных данных
-    if (!fileId || !telegram_token || !openai_api_key || !model ) {
+    if (!fileId || !telegram_token || !openai_api_key || !model || !jb_mail ) {
       return res.status(400).json({
         success: false,
         message: "Missing required fields",
