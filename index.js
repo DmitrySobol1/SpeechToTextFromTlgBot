@@ -106,6 +106,10 @@ app.post("/transcribe", async (req, res) => {
       model
     );
 
+    if (!transcription){
+      throw new Error("Failed to transcribe audio");
+    }
+
     // Возвращаем результат
     res.json({
       success: true,
