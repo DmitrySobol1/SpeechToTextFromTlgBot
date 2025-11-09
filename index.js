@@ -121,6 +121,13 @@ app.post("/transcribe", async (req, res) => {
   }
 });
 
+app.get("/test", async (req, res) => {
+  res.json({
+      result: 'test done',
+      
+    });
+})
+
 
 
 // Запуск сервера
